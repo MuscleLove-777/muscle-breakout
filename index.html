@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>筋肉ブロック崩し / Muscle Breakout - MuscleLove</title>
+  <meta name="description" content="Break muscle bricks to reveal the full image! Classic breakout with muscle girls.">
+  <meta property="og:title" content="筋肉ブロック崩し / Muscle Breakout - MuscleLove">
+  <meta property="og:description" content="ブロックを壊して筋肉美女を解放せよ！💪">
+  <meta property="og:image" content="images/img1.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/img1.png" type="image/png">
+</head>
+<body>
+
+  <header class="header">
+    <h1>筋肉ブロック崩し / Muscle Breakout</h1>
+    <div class="subtitle">ブロックを壊して筋肉美女を解放せよ！ / Break bricks to reveal the muscle girl!</div>
+  </header>
+
+  <div class="score-bar">
+    <div class="score-box">
+      <div class="label">Score</div>
+      <div class="value" id="score">0</div>
+    </div>
+    <div class="score-box">
+      <div class="label">Best</div>
+      <div class="value best" id="best-score">0</div>
+    </div>
+    <div class="score-box">
+      <div class="label">Lives</div>
+      <div class="value lives" id="lives">❤❤❤</div>
+    </div>
+    <div class="score-box">
+      <div class="label">Level</div>
+      <div class="value" id="level">1</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn primary" id="btn-new" title="New Game">🔄 New Game</button>
+    <button class="btn" id="btn-share" title="Share on X">𝕏 Share</button>
+    <button class="btn" id="btn-sound" title="Toggle Sound">🔊</button>
+  </div>
+
+  <div class="canvas-wrapper" id="canvas-wrapper">
+    <canvas id="game-canvas"></canvas>
+    <!-- Start overlay -->
+    <div class="overlay active" id="overlay-start">
+      <h2>筋肉ブロック崩し<br><span class="en">Muscle Breakout</span></h2>
+      <p class="overlay-desc">ブロックを壊して筋肉美女を解放！<br><span class="en">Break all bricks to reveal the image!</span></p>
+      <button class="btn primary" id="btn-start">💪 START</button>
+    </div>
+    <!-- Game Over overlay -->
+    <div class="overlay" id="overlay-gameover">
+      <h2>💪 Game Over!</h2>
+      <div class="final-score">Score: <span id="final-score">0</span></div>
+      <div class="final-detail">
+        Level: <span id="final-level">1</span> | Bricks: <span id="final-bricks">0</span>/<span id="final-total">40</span>
+      </div>
+      <button class="btn primary" id="btn-retry">🔄 Try Again</button>
+      <button class="btn" id="btn-share2">𝕏 Share Result</button>
+    </div>
+    <!-- Level Clear overlay -->
+    <div class="overlay" id="overlay-clear">
+      <h2>🎉 CLEAR!</h2>
+      <p class="overlay-desc">全ブロック破壊！<br><span class="en">All bricks destroyed!</span></p>
+      <div class="final-score">Score: <span id="clear-score">0</span></div>
+      <button class="btn primary" id="btn-next">➡ Next Level</button>
+      <button class="btn" id="btn-share3">𝕏 Share Result</button>
+    </div>
+  </div>
+
+  <div class="combo-display" id="combo-display"></div>
+
+  <div class="patreon-cta">
+    <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" rel="noopener">
+      ❤️ Support on Patreon
+    </a>
+    <div class="cta-sub">Unlock exclusive muscle content / 限定コンテンツを解放</div>
+  </div>
+
+  <div class="how-to-play">
+    <details>
+      <summary>📖 How to Play / 遊び方</summary>
+      <div class="content">
+        <strong>JP:</strong> マウスまたはタッチでパドルを左右に動かしてボールを跳ね返そう。
+        全てのブロックを壊すと筋肉美女の画像が解放される！
+        パワーアップアイテムをキャッチして有利に進めよう。<br><br>
+        <strong>EN:</strong> Move the paddle with mouse or touch to bounce the ball.
+        Break all bricks to reveal the muscle girl image!
+        Catch power-ups for special abilities.<br><br>
+        <strong>パワーアップ / Power-ups:</strong><br>
+        🟢 ワイドパドル / Wide Paddle<br>
+        🔵 マルチボール / Multi Ball<br>
+        🟡 スローボール / Slow Ball
+      </div>
+    </details>
+  </div>
+
+  <footer class="footer">
+    <p>© MuscleLove — <a href="https://www.patreon.com/cw/MuscleLove" target="_blank">Patreon</a></p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
